@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Basic DFA Calculator</title>
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/index.css">
+	<script>
+		function formComplete(e){
+			var rtrn = false;
+			(document.getElementById("inputString").value && document.getElementById("alphabet").value && document.getElementById("states").value && document.getElementById("startState").value && document.getElementById("acceptState").value && document.getElementById("transition").value) ? rtrn = true : rtrn = false;
+			if (!rtrn){
+				alert("Please fill out all values");
+				e.preventDefault();
+			}
+		}
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="left">
+			<div class="leftDiv">
+				<header>
+					<h1>DFA Calculator</h1>
+					<h6>Authored by: Shane Casiano, Jade Spahr, and Amanda Wiggins</h6>
+				</header>
+				<h2>Instructions</h2>
+				<ul>
+					<li>
+						<h4>Input String</h4>
+						<p>Input is taken as a non-separated list where each value is ranging from 0 - 9</p>
+					</li>
+					<li>
+						<h4>Alphabet</h4>
+						<p>Alphabet is a comma-separated list where each value is ranging from 0 - 9</p>
+					</li>
+					<li>
+						<h4>States</h4>
+						<p>States is a comma-separated list where each element is ranging from a - z</p>
+					</li>
+					<li>
+						<h4>Start State</h4>
+						<p>The start state is a single element ranging from a - z</p>
+					</li>
+					<li>
+						<h4>Accept States</h4>
+						<p>The accept states is a comma-separated list where each element is a - z</p>
+					</li>
+					<li>
+						<h4>Transition Function</h4>
+						<p>The transition function must use the following format: <br> state,inputValue=stateDestination <br> There must only be one such function per line</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="right">
+			<div class="rightDiv">
+				<h2>Input to Generate DFA and Test String</h2>
+				<form id="DFA_Generator" action="DFAgen.html">
+					<div class="inputInfo">
+						<label for="inputString">Input String to be Processed:</label>
+						<input name="inputString" id="inputString" type="text" placeholder="0101010101">
+					</div>
+					<div class="inputInfo">
+						<label for="alphabet">Alphabet for the DFA:</label>
+						<input name="alphabet" id="alphabet" type="text" placeholder="0,1">
+					</div>
+					<div class="inputInfo">
+						<label for="states">States for the DFA:</label>
+						<input name="states" id="states" type="text" placeholder="a,b,c,d">
+					</div>
+					<div class="inputInfo">
+						<label for="startState">Start State for the DFA</label>
+						<input name="startState" id="startState" type="text" placeholder="a">
+					</div>
+					<div class="inputInfo">
+						<label for="acceptState">End State for the DFA</label>
+						<input name="acceptState" id="acceptState" type="text" placeholder="c,d">
+					</div>
+					<div class="inputInfo">
+						<label for="transition">Transition Function:</label>
+						<textarea name="transition" id="transition" placeholder="a,0=b&#10;a,1=a&#10;b,0=c&#10;b,1=a&#10;c,0=c&#10;c,1=d&#10;d,0=d&#10;d,1=d"></textarea>
+					</div>
+					<fieldset id="submitbutton">
+						<input type="submit" value="Submit">
+					</fieldset>
+				</form>
+			</div>
+		</div>
+	</div>
+	<script>
+		document.getElementById("DFA_Generator").addEventListener("submit", formComplete);
+	</script>
+</body>
+</html>

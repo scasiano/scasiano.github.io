@@ -1,0 +1,59 @@
+html{
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 0.9em;
+}
+
+html, body {
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	margin: 0;
+	background-color:rgb(17,17,17);
+	color: rgb(190,190,190);
+}
+
+.wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	margin: auto;
+	padding: 0;
+}
+
+.left{
+	padding-top: 3% !important;
+	padding-bottom: 3% !important;
+}
+
+.left{
+	width: 34.5%;
+	background-color: rgb(32,32,32);
+	vertical-align: top;
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+}
+
+.leftDiv{
+	padding-left: 40%;
+	padding-right: 15%;
+}
+
+.right{
+	width: 65.5%;
+	background-color: rgb(17,17,17);
+	float: right;
+	left: 30%;
+	height: 100%;
+}
+
+
+.rightDiv{
+	margin: 6.4%;
+	background-color: rgb(32,32,32);
+	margin-right: 20%;
+	padding: 5%;
+}

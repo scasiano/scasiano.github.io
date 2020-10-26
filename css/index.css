@@ -1,0 +1,58 @@
+.right input[type=text]{
+	background-color: rgb(17,17,17);
+	color: rgb(190,190,190);
+	border: none;
+}
+
+.right textarea{
+	background-color: rgb(17,17,17);
+	color: rgb(190,190,190);
+	border: none;
+}
+
+#DFA_Generator{
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.inputInfo{
+	margin: 2%;
+	padding-left: auto;
+	padding-right: auto;
+	text-align: center;
+}
+
+#DFA_Generator label{
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: left;
+}
+
+#DFA_Generator input{
+	vertical-align: top;
+}
+
+#DFA_Generator textarea{
+	width: 169px;
+	height: 150px;
+}
+
+#submitbutton{
+	border: none;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+#submitbutton input{
+	border: none;
+	padding: 5px 15px;
+	font-weight: bold;
+	height: 2.5em;
+	color: rgb(190,190,190);
+	background: rgb(100, 100, 100);
+}
+
+.rightDiv > h2{
+	padding-bottom: 3%;
+}

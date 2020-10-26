@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Basic DFA Calculator</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/DFAGen.css">
+	<script src="js/DFAInput.js"></script>
+	<script src="js/DFA.js"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="left">
+			<div class="leftDiv">
+				<header>
+					<h1>DFA Calculator</h1>
+					<h6>Authored by: Shane Casiano, Jade Spahr, and Amanda Wiggins</h6>
+				</header>
+				<h2>Input:</h2>
+				<table id="dataTable">
+					<tr>
+						<th><li>Input String:</li></th>
+						<td>
+							<script>document.writeln(inputString.join(""))</script>
+						</td>
+					</tr>
+					<tr>
+						<th><li>Alphabet:</li></th>
+						<td>
+							<script>document.writeln(alphabet);</script>
+						</td>
+					</tr>
+					<tr>
+						<th><li>States:</li></th>
+						<td>
+							<script>document.writeln(states);</script>
+						</td>
+					</tr>
+					<tr>
+						<th><li>Start State:</li></th>
+						<td>
+							<script>document.writeln(startState);</script>
+						</td>
+					</tr>
+					<tr>
+						<th><li>Accept State(s):</li></th>
+						<td>
+							<script>document.writeln(acceptState);</script>
+						</td>
+					</tr>
+					<tr>
+						<th><li>Transition Function:</li></th>
+						<td>
+							<table id="transitionTable">
+								<script>
+									document.writeln("<tr><th></th>");
+									for (var i = 0; i < alphabet.length; i++) document.writeln("<th>" + alphabet[i] + "</th>");
+									document.writeln("</tr>");
+									for (var i = 0; i < transition.length; i++){
+										document.writeln("<tr>");
+										document.writeln("<th>" + states[i] + "</th>");
+										for (var inp = 0; inp < transition[i].length; inp++){
+											document.writeln("<td>" + transition[i][inp] + "</td>");
+										}
+										document.writeln("</tr>");
+									}
+								</script>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<div class="right">
+			<div class="rightDiv">
+				<h2>Your input string has been calculated</h2>
+				<h3>
+					<ul id="result">
+						<script>
+							var result = isAccept(inputString, startState, acceptState, transition);
+							if (result){
+								document.writeln("<li>✓ &nbsp; The input string was accepted.</li>");
+							}
+							if (!result){
+								document.writeln("<li>X &nbsp; The input string was denied.</li>");
+							}
+						</script>
+					</ul>
+				</h3>
+				<h3>DFA Diagram: </h3>
+				<div class="drawnDFA">
+					<canvas id="drawnDFACanvas" width="900" height="900"></canvas>
+					<script>drawDFA(states, startState, acceptState, transition);</script>
+					<table id="key">
+						<tr>
+							<th colspan="6">Key:</th>
+						</tr>
+						<tr>
+							<td id="forward">\25AA</td>
+							<td>Progress forward</td>
+							<td id="backward">\25AA</td>
+							<td>Progress backward</td>
+							<td id="same">\25AA</td>
+							<td>Remain at the same state</td>
+						</tr>
+					</table> 
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
