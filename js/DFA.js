@@ -257,12 +257,12 @@ function drawTransition(canvasDraw, transition, radius){
             var xPos = 0;
             var yPos = 0;
             if (i < destination){
-                xPos = alphaState[i][inp][1] - alphaState[i][inp][0]*0.20;
-                yPos = alphaState[i][inp][2] + alphaState[i][inp][0]*0.20;
+                xPos = alphaState[i][inp][1] - alphaState[i][inp][0]*0.30;
+                yPos = alphaState[i][inp][2] + alphaState[i][inp][0]*0.30;
             }
             else if (i > destination){
-                xPos = alphaState[i][inp][1] + alphaState[i][inp][0]*0.17;
-                yPos = alphaState[i][inp][2] - alphaState[i][inp][0]*0.17;
+                xPos = alphaState[i][inp][1] + alphaState[i][inp][0]*0.25;
+                yPos = alphaState[i][inp][2] - alphaState[i][inp][0]*0.25;
             }
             else if (i === destination){
                 xPos = alphaState[i][inp][1] - alphaState[i][inp][0]*0.1;

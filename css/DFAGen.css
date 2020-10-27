@@ -66,16 +66,25 @@ canvas{
 }
 
 #forward{ 
-    color: #1212b3;
+    color: #000000;
     background-color: #1212b3;
+    width: 7%;
+    font-weight: bold;
+    text-align: center;
 }
 
 #backward{
-    color: #12b338;
+    color: #000000;
     background-color: #12b338;
+    width: 7%;
+    font-weight: bold;
+    text-align: center;
 }
 
 #same{
-    color: #b31212;
+    color: #000000;
     background-color: #b31212;
+    width: 7%;
+    font-weight: bold;
+    text-align: center;
 }
