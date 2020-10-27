@@ -119,9 +119,9 @@ function drawStartState(canvasDraw, spacing, radius){
     canvasDraw.strokeStyle = '#BEBEBE';
     canvasDraw.fillStyle = '#202020';
     canvasDraw.lineWidth = 1;
-    canvasDraw.lineTo(spacing-radius-(spacing/5), spacing-(spacing/5));
+    canvasDraw.lineTo(spacing-radius-(radius/5), spacing-(radius/5));
     canvasDraw.lineTo(spacing-radius, spacing);
-    canvasDraw.lineTo(spacing-radius-(spacing/5), spacing+(spacing/5));
+    canvasDraw.lineTo(spacing-radius-(radius/5), spacing+(radius/5));
     canvasDraw.stroke();
     canvasDraw.closePath();
 }
