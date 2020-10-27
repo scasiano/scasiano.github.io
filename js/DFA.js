@@ -1,67 +1,43 @@
+function charToInt(x){
+    switch (x) {
+        case 'a': x = 0; break;
+        case 'b': x = 1; break;
+        case 'c': x = 2; break;
+        case 'd': x = 3; break;
+        case 'e': x = 4; break;
+        case 'f': x = 5; break;
+        case 'g': x = 6; break;
+        case 'h': x = 7; break;
+        case 'i': x = 8; break;
+        case 'j': x = 9; break;
+        case 'k': x = 10; break;
+        case 'l': x = 11; break;
+        case 'm': x = 12; break;
+        case 'n': x = 13; break;
+        case 'o': x = 14; break;
+        case 'p': x = 15; break;
+        case 'q': x = 16; break;
+        case 'r': x = 17; break;
+        case 's': x = 18; break;
+        case 't': x = 19; break;
+        case 'u': x = 20; break;
+        case 'v': x = 21; break;
+        case 'w': x = 22; break;
+        case 'x': x = 23; break;
+        case 'y': x = 24; break;
+        case 'z': x = 25; break;
+        default: x = null; break;
+    }
+    return x;
+}
+
 function isAccept(inputString, startState, acceptState, transition){
     var isAccept = false;
     var column = 0;
-    var row = 0;
-    switch (startState) {
-        case 'a': row = 0; break;
-        case 'b': row = 1; break;
-        case 'c': row = 2; break;
-        case 'd': row = 3; break;
-        case 'e': row = 4; break;
-        case 'f': row = 5; break;
-        case 'g': row = 6; break;
-        case 'h': row = 7; break;
-        case 'i': row = 8; break;
-        case 'j': row = 9; break;
-        case 'k': row = 10; break;
-        case 'l': row = 11; break;
-        case 'm': row = 12; break;
-        case 'n': row = 13; break;
-        case 'o': row = 14; break;
-        case 'p': row = 15; break;
-        case 'q': row = 16; break;
-        case 'r': row = 17; break;
-        case 's': row = 18; break;
-        case 't': row = 19; break;
-        case 'u': row = 20; break;
-        case 'v': row = 21; break;
-        case 'w': row = 22; break;
-        case 'x': row = 23; break;
-        case 'y': row = 24; break;
-        case 'z': row = 25; break;
-        default: row = null; break;
-    }
+    var row = charToInt(startState);
     for (var i = 0; i < inputString.length; i++) {
         column = inputString[i];
-        switch (transition[row][column]) {
-            case 'a': row = 0; break;
-            case 'b': row = 1; break;
-            case 'c': row = 2; break;
-            case 'd': row = 3; break;
-            case 'e': row = 4; break;
-            case 'f': row = 5; break;
-            case 'g': row = 6; break;
-            case 'h': row = 7; break;
-            case 'i': row = 8; break;
-            case 'j': row = 9; break;
-            case 'k': row = 10; break;
-            case 'l': row = 11; break;
-            case 'm': row = 12; break;
-            case 'n': row = 13; break;
-            case 'o': row = 14; break;
-            case 'p': row = 15; break;
-            case 'q': row = 16; break;
-            case 'r': row = 17; break;
-            case 's': row = 18; break;
-            case 't': row = 19; break;
-            case 'u': row = 20; break;
-            case 'v': row = 21; break;
-            case 'w': row = 22; break;
-            case 'x': row = 23; break;
-            case 'y': row = 24; break;
-            case 'z': row = 25; break;
-            default: row = null; break;
-        }
+        row = charToInt(transition[row][column]);
     }
     for (var i = 0; i < acceptState.length; i++) {
         isAccept = (transition[row][column] === acceptState[i]);
@@ -141,37 +117,8 @@ function drawTransition(canvasDraw, transition, radius){
     for (var i = 0; i < transition.length; i++){
         alphaState.push([]);
         for (var inp = 0; inp < transition[i].length; inp++){
-            var end = 0;
+            var end = charToInt(transition[i][inp]);
             alphaState[i].push([]);
-            switch (transition[i][inp]) {
-                case 'a': end = 0; break;
-                case 'b': end = 1; break;
-                case 'c': end = 2; break;
-                case 'd': end = 3; break;
-                case 'e': end = 4; break;
-                case 'f': end = 5; break;
-                case 'g': end = 6; break;
-                case 'h': end = 7; break;
-                case 'i': end = 8; break;
-                case 'j': end = 9; break;
-                case 'k': end = 10; break;
-                case 'l': end = 11; break;
-                case 'm': end = 12; break;
-                case 'n': end = 13; break;
-                case 'o': end = 14; break;
-                case 'p': end = 15; break;
-                case 'q': end = 16; break;
-                case 'r': end = 17; break;
-                case 's': end = 18; break;
-                case 't': end = 19; break;
-                case 'u': end = 20; break;
-                case 'v': end = 21; break;
-                case 'w': end = 22; break;
-                case 'x': end = 23; break;
-                case 'y': end = 24; break;
-                case 'z': end = 25; break;
-                default: end = null; break;
-            }
             if (i < end){
                 var startX = statesCanvasUpLocation[i][0];
                 var startY = statesCanvasUpLocation[i][1];
@@ -224,36 +171,7 @@ function drawTransition(canvasDraw, transition, radius){
         whereText.push([]);
         for (var inp = 0; inp < transition[i].length; inp++){
             whereText[i].push([]);
-            var destination = 0;
-            switch (transition[i][inp]) {
-                case 'a': destination = 0; break;
-                case 'b': destination = 1; break;
-                case 'c': destination = 2; break;
-                case 'd': destination = 3; break;
-                case 'e': destination = 4; break;
-                case 'f': destination = 5; break;
-                case 'g': destination = 6; break;
-                case 'h': destination = 7; break;
-                case 'i': destination = 8; break;
-                case 'j': destination = 9; break;
-                case 'k': destination = 10; break;
-                case 'l': destination = 11; break;
-                case 'm': destination = 12; break;
-                case 'n': destination = 13; break;
-                case 'o': destination = 14; break;
-                case 'p': destination = 15; break;
-                case 'q': destination = 16; break;
-                case 'r': destination = 17; break;
-                case 's': destination = 18; break;
-                case 't': destination = 19; break;
-                case 'u': destination = 20; break;
-                case 'v': destination = 21; break;
-                case 'w': destination = 22; break;
-                case 'x': destination = 23; break;
-                case 'y': destination = 24; break;
-                case 'z': destination = 25; break;
-                default: destination = null; break;
-            }
+            var destination = charToInt(transition[i][inp]);
             var xPos = 0;
             var yPos = 0;
             if (i < destination){
