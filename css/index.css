@@ -56,3 +56,7 @@
 .rightDiv > h2{
 	padding-bottom: 3%;
 }
+
+.leftDiv > ul > li{
+	font-size: 0.9em;
+}
