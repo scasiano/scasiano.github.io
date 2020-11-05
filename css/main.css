@@ -50,10 +50,24 @@ body{
 	height: 100%;
 }
 
-
 .rightDiv{
 	margin: 6.4%;
 	background-color: rgb(32,32,32);
 	margin-right: 20%;
 	padding: 5%;
+}
+
+#submitbutton{
+	border: none;
+	margin-bottom: 0;
+	text-align: center;
+}
+
+#submitbutton input{
+	border: none;
+	padding: 5px 15px;
+	font-weight: bold;
+	height: 2.5em;
+	color: rgb(190,190,190);
+	background: rgb(100, 100, 100);
 }

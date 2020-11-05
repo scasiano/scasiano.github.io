@@ -27,11 +27,7 @@
 				</header>
 				<h2>Instructions</h2>
 				<ul>
-					<h5>*Please be sure to avoid adding any spaces unless explicitly instructed below*</h5>
-					<li>
-						<h4>Input String</h4>
-						<p>Input is taken as a non-separated list where each value is ranging from 0 - 9</p>
-					</li>
+					<h5 class="important">*Please be sure to avoid adding any spaces unless explicitly instructed below*</h5>
 					<li>
 						<h4>Alphabet</h4>
 						<p>Alphabet is a comma-separated list where each value is ranging from 0 - 9</p>
@@ -60,10 +56,6 @@
 				<h2>Input to Generate DFA and Test String</h2>
 				<form id="DFA_Generator" action="DFAgen.html">
 					<div class="inputInfo">
-						<label for="inputString">Input String to be Processed:</label>
-						<input name="inputString" id="inputString" type="text" placeholder="0101010101">
-					</div>
-					<div class="inputInfo">
 						<label for="alphabet">Alphabet for the DFA:</label>
 						<input name="alphabet" id="alphabet" type="text" placeholder="0,1">
 					</div>
@@ -81,7 +73,7 @@
 					</div>
 					<div class="inputInfo">
 						<label for="transition">Transition Function:</label>
-						<textarea name="transition" id="transition" placeholder="a,0=b&#10;a,1=a&#10;b,0=c&#10;b,1=a&#10;c,0=c&#10;c,1=d&#10;d,0=d&#10;d,1=d"></textarea>
+						<textarea name="transition" id="transition" placeholder="(a,0)->b&#10;(a,1)->a&#10;(b,0)->c&#10;(b,1)->a&#10;(c,0)->c&#10;(c,1)->d&#10;(d,0)->d&#10;(d,1)->d"></textarea>
 					</div>
 					<fieldset id="submitbutton">
 						<input type="submit" value="Submit">

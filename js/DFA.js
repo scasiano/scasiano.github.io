@@ -47,6 +47,23 @@ function isAccept(inputString, startState, acceptState, transition){
     return isAccept;
 }
 
+function rewriteResult(e){
+    var inString = document.getElementById("inputString").value;
+    var result = isAccept(inString, startState, acceptState, transition);
+    if (result === null){
+        document.getElementById("resultLI").textContent = "Please enter a string";
+    }
+    if (result){
+        document.getElementById("resultLI").textContent = "✓ The input string was accepted.";
+    }
+    if (!result){
+        document.getElementById("resultLI").textContent = "X The input string was denied.";
+    }
+    document.getElementById("inputString").value = "";
+    document.getElementById("updateInString").textContent = inString;
+    e.preventDefault();
+}
+
 function drawDFA(states, startState, acceptState, transition){
     //Define canvas
     statesCanvasUpLocation = [];

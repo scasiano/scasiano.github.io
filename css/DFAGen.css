@@ -88,3 +88,26 @@ canvas{
     font-weight: bold;
     text-align: center;
 }
+
+#input_string input{
+    width: 100%;
+    vertical-align: top;
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.inputInfo{
+    margin-left: auto;
+	margin-right: auto;
+}
+
+.left input[type=text]{
+	background-color: rgb(17,17,17);
+	color: rgb(190,190,190);
+	border: none;
+}
+
+#input_string{
+	margin-left: auto;
+	margin-right: auto;
+}

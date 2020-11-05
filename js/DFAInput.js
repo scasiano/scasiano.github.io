@@ -7,17 +7,15 @@ formData = unescape(formData);
 var formArray = formData.split("&");
 
 //assign form values to var
-inputString = formArray[0]
-alphabet = formArray[1];
-states = formArray[2];
-startState = formArray[3];
-acceptState = formArray[4];
+alphabet = formArray[0];
+states = formArray[1];
+startState = formArray[2];
+acceptState = formArray[3];
 var inputTransition = [];
-for (var i = 5; i < formArray.length; i++) inputTransition.push(formArray[i]);
+for (var i = 4; i < formArray.length; i++) inputTransition.push(formArray[i]);
 
 //organize given data, remove redundency
 transition = [];
-inputString = inputString.replace("inputString=","").split("");
 alphabet = alphabet.replace("alphabet=", "").split(",").sort();
 states = states.replace("states=", "").split(",").sort();
 startState = startState.replace("startState=", "");
@@ -27,7 +25,7 @@ var index = 0;
 for(var i = 0; i < states.length; i++){
     transition.push([]);
     for (var inp = 0; inp < alphabet.length; inp++){
-        transition[i][inp] = inputTransition[index].charAt(4);
+        transition[i][inp] = inputTransition[index].charAt(inputTransition[index].length - 1);
         index++;
     }
 }

@@ -16,13 +16,22 @@
 					<h1>DFA Calculator</h1>
 					<h6>Authored by: Shane Casiano, Jade Spahr, and Amanda Wiggins</h6>
 				</header>
+				<h2>Input String:</h2>
+				<form id="input_string">
+					<fieldset>
+						<div class="inputInfo">
+							<input name="inputString" id="inputString" type="text" placeholder="0101010101">
+						</div>
+					</fieldset>
+					<fieldset id="submitbutton">
+						<input id="testBTN" type="submit" value="Test">
+					</fieldset>
+				</form>
 				<h2>Input:</h2>
 				<table id="dataTable">
 					<tr>
 						<th><li>Input String:</li></th>
-						<td>
-							<script>document.writeln(inputString.join(""))</script>
-						</td>
+						<td id="updateInString"></td>
 					</tr>
 					<tr>
 						<th><li>Alphabet:</li></th>
@@ -76,15 +85,7 @@
 				<h2>Your input string has been calculated</h2>
 				<h3>
 					<ul id="result">
-						<script>
-							var result = isAccept(inputString, startState, acceptState, transition);
-							if (result){
-								document.writeln("<li>✓ &nbsp; The input string was accepted.</li>");
-							}
-							if (!result){
-								document.writeln("<li>X &nbsp; The input string was denied.</li>");
-							}
-						</script>
+						<li id="resultLI"></li>
 					</ul>
 				</h3>
 				<h3>DFA Diagram: </h3>
@@ -108,5 +109,6 @@
 			</div>
 		</div>
 	</div>
+	<script>document.getElementById("input_string").addEventListener("submit", rewriteResult);</script>
 </body>
 </html>
