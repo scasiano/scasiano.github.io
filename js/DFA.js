@@ -40,7 +40,7 @@ function isAccept(inputString, startState, acceptState, transition){
         row = charToInt(transition[row][column]);
     }
     for (var i = 0; i < acceptState.length; i++) {
-        isAccept = (transition[row][column] === acceptState[i]);
+        isAccept = (row === charToInt(acceptState[i]));
         if (isAccept)
             break;
     }
