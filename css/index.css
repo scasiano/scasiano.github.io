@@ -8,6 +8,7 @@
 	background-color: rgb(17,17,17);
 	color: rgb(190,190,190);
 	border: none;
+	resize: none;
 }
 
 #DFA_Generator{
@@ -36,6 +37,15 @@
 #DFA_Generator textarea{
 	width: 169px;
 	height: 150px;
+}
+
+.check{
+	display: inline-block;
+	vertical-align: top;
+	padding: 0;
+	padding-left: 1%;
+	margin: 0;
+	font-weight: bold;
 }
 
 .rightDiv > h2{

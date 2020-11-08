@@ -5,16 +5,7 @@
 	<title>Basic DFA Calculator</title>
 	<link rel="stylesheet" href="css/main.css">
 	<link rel="stylesheet" href="css/index.css">
-	<script>
-		function formComplete(e){
-			var rtrn = false;
-			(document.getElementById("inputString").value && document.getElementById("alphabet").value && document.getElementById("states").value && document.getElementById("startState").value && document.getElementById("acceptState").value && document.getElementById("transition").value) ? rtrn = true : rtrn = false;
-			if (!rtrn){
-				alert("Please fill out all values");
-				e.preventDefault();
-			}
-		}
-	</script>
+	<script src="js/inputValidate.js"></script>
 </head>
 
 <body>
@@ -58,22 +49,27 @@
 					<div class="inputInfo">
 						<label for="alphabet">Alphabet for the DFA:</label>
 						<input name="alphabet" id="alphabet" type="text" placeholder="0,1">
+						<p class="check" id="alphabetCheck">•</p>
 					</div>
 					<div class="inputInfo">
 						<label for="states">States for the DFA:</label>
 						<input name="states" id="states" type="text" placeholder="a,b,c,d">
+						<p class="check" id="statesCheck">•</p>
 					</div>
 					<div class="inputInfo">
 						<label for="startState">Start State for the DFA</label>
 						<input name="startState" id="startState" type="text" placeholder="a">
+						<p class="check" id="startCheck">•</p>
 					</div>
 					<div class="inputInfo">
 						<label for="acceptState">End State for the DFA</label>
 						<input name="acceptState" id="acceptState" type="text" placeholder="c,d">
+						<p class="check" id="acceptCheck">•</p>
 					</div>
 					<div class="inputInfo">
 						<label for="transition">Transition Function:</label>
 						<textarea name="transition" id="transition" placeholder="(a,0)->b&#10;(a,1)->a&#10;(b,0)->c&#10;(b,1)->a&#10;(c,0)->c&#10;(c,1)->d&#10;(d,0)->d&#10;(d,1)->d"></textarea>
+						<p class="check" id="transitionCheck">•</p>
 					</div>
 					<fieldset id="submitbutton">
 						<input type="submit" value="Submit">
@@ -83,6 +79,11 @@
 		</div>
 	</div>
 	<script>
+		document.getElementById("alphabet").addEventListener("change", checkAlphabet);
+		document.getElementById("states").addEventListener("change", checkStates);
+		document.getElementById("startState").addEventListener("change", checkStart);
+		document.getElementById("acceptState").addEventListener("change", checkAccept);
+		document.getElementById("transition").addEventListener("change", checkTransition);
 		document.getElementById("DFA_Generator").addEventListener("submit", formComplete);
 	</script>
 </body>

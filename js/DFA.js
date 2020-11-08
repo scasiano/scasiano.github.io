@@ -50,15 +50,9 @@ function isAccept(inputString, startState, acceptState, transition){
 function rewriteResult(e){
     var inString = document.getElementById("inputString").value;
     var result = isAccept(inString, startState, acceptState, transition);
-    if (result === null){
-        document.getElementById("resultLI").textContent = "Please enter a string";
-    }
-    if (result){
-        document.getElementById("resultLI").textContent = "✓ The input string was accepted.";
-    }
-    if (!result){
-        document.getElementById("resultLI").textContent = "X The input string was denied.";
-    }
+    if (inString === "") document.getElementById("resultLI").textContent = "• | Please enter a test string";
+    else if (result) document.getElementById("resultLI").innerHTML = "<span id='green'>✓</span> | The input string was accepted.";
+    else if (!result) document.getElementById("resultLI").innerHTML = "<span id='red'>X</span> | The input string was denied.";
     document.getElementById("inputString").value = "";
     document.getElementById("updateInString").textContent = inString;
     e.preventDefault();
